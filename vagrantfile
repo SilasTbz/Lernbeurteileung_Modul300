@@ -1,1 +1,38 @@
+Vagrant.configure("2") do |config|
+  config.vm.box = "ubuntu/focal64"
+config.vm.hostname = "apache"
+config.vm.network "private_network", ip: "192.169.4.20"
+config.vm.provider "virtualbox" do |vb|
+  vb.name = "Apache in Docker"
+  vb.customize ["modifyvm", :id, "--cpus", "5"]
+  vb.customize ["modifyvm", :id, "--memory", "5000"]
+  vb.customize ["modifyvm", :id, "--usb", "off"]
+  vb.customize ["modifyvm", :id, "--usbehci", "off"]
+end
+config.vm.provision "shell", inline: <<-SHELL
+  sudo su - &&
+  apt-get update -y &&
+  apt-get upgrade -y && 
+  apt-get autoremove -y &&
+  apt-get install docker docker-compose -y &&
 
+  systemctl enable docker &&
+  systemctl start docker &&
+  
+  apt-get install ufw -y &&
+  apt-get install openssh-server -y &&
+  ufw enable &&
+  ufw allow 9009 &&
+  ufw allow 22 &&
+  
+  docker volume create portainer_volume &&
+  docker run -d -p 8008:8000 -p 9009:9443 --name portainer_container \
+  --restart=always \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v portainer_volume:/data \
+  portainer/portainer-ce:2.9.3 &&
+
+  apt-get autoremove -y &&
+  apt-get autoclean -y
+SHELL
+end
