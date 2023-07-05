@@ -184,19 +184,18 @@ portainer/portainer-ce:2.9.3 &&
 ```
 
 ### Abschluss
-Nun werden noch alle unnötigen Pakete vom System entfernt.
-
-```bash
-apt-get autoremove -y &&
-apt-get autoclean -y
-```
-
 > der "SHELL" Teil im Vagrantfile muss, wie im folgenden Code-Teil, abgeschlossen werden:
 > ```ruby
 >   SHELL
 > end
 > ```
 
+Nun werden noch alle unnötigen Pakete vom System entfernt.
+
+```bash
+apt-get autoremove -y &&
+apt-get autoclean -y
+```
 
 
 # Testing
