@@ -9,8 +9,6 @@
     und Löschung von Swarm-Diensten, Benutzerauthentifizierung, Berechtigungen, Verbindungsaufbau, Ausführung von Befehlen in der Konsole von \
     laufenden Containern und die Anzeige von Container-Logs.
 
-Aus dem englischen Übersetzt, Quelle: [Containers: Portainer Overview](https://betterprogramming.pub/portainer-review-382575dabb76)
-
 
 # Inhaltsverzeichnis
 
