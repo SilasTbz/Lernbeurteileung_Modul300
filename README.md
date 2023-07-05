@@ -148,3 +148,37 @@ dass das diese bei jedem Systemstart automatisch auch starten.
 systemctl enable docker &&
 systemctl start docker &&
 ```
+
+### Firewall
+Als Nächstes wird die weitverbreitete Firewall [ufw](https://wiki.ubuntuusers.de/ufw/) installiert. \
+Sobald diese problemlos installiert wurde wird der Port 9009, welcher für das Portainer-Webgui genutzt wird, Zugelassen. \
+Für den SSH zugriff muss noch die Software [Openssh-server](https://ubuntu.com/server/docs/service-openssh) installiert und der Port 22 Zugelassen werden.
+
+```bash
+apt-get install ufw -y &&
+apt-get install openssh-server -y &&
+ufw enable &&
+ufw allow 9009 &&
+ufw allow 22 &&
+```
+
+### Portainer Docker-Container
+Vor dem Starten des Cotainers, wird ein [Dockervolume](https://docs.docker.com/storage/volumes/#create-and-manage-volumes) erstellt, \
+wo später die Dateien des containers abgelegt werden, sodass diese beim stoppen des Containers nicht verloren gehen. \
+Nun wird das [Portainer](https://docs.portainer.io/v/ce-2.9/start/install/server/docker/linux#deployment) Dockercontainerimage gestartet. \
+Folgende [Docker run Container-Parameter](https://docs.docker.com/engine/reference/commandline/run/#options) wurden verwendet: \
+| Parameter | Beschreibung |
+------------|---------------
+| `-d` | **_"detached"_** macht, dass der Container im Hintergrund läuft und nicht z.B. Ausgaben ins Linux-terminal schreibt |
+| `-p` | **_"port"_** mit diesem Parameter können Container Ports an Host-Ports gebunden werden |
+| `--name` | der name des Containers |
+| `-v` | **_"volume"_** hier wird angegeben welcher Container-Pfad an welchen Host-Pfad gebunden wird |
+
+```bash
+docker volume create portainer_volume &&
+docker run -d -p 8008:8000 -p 9009:9443 --name portainer_container \
+--restart=always \
+-v /var/run/docker.sock:/var/run/docker.sock \
+-v portainer_volume:/data \
+portainer/portainer-ce:2.9.3 &&
+```
