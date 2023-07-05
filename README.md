@@ -32,7 +32,7 @@ Aus dem englischen Übersetzt, Quelle: [Containers: Portainer Overview](https://
 
 # Darstellung
 
-![Struktur](images/umgebung.png)
+![Struktur](image/umgebung.png)
 
 # Umgebung
 ## Verwendete Software:
