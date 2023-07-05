@@ -210,7 +210,7 @@ wo beim ersten Login die Admin-Benutzer informationen gesetzt werden müssen, da
 
 Als erstes sollte ein simpler Verbindungstest mit `ping` durchgeführt werden.
 
-![Ping](images/Ping.png) 
+![Ping](image/Ping.png) 
 
 Wie im Bild ersichtlich, war dieser Test erfolgreich.
 
