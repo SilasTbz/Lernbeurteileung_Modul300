@@ -182,3 +182,41 @@ docker run -d -p 8008:8000 -p 9009:9443 --name portainer_container \
 -v portainer_volume:/data \
 portainer/portainer-ce:2.9.3 &&
 ```
+
+### Abschluss
+> der "SHELL" Teil im Vagrantfile muss, wie im folgenden Code-Teil, abgeschlossen werden:
+> ```ruby
+>   SHELL
+> end
+> ```
+
+Nun werden noch alle unnötigen Pakete vom System entfernt.
+
+```bash
+apt-get autoremove -y &&
+apt-get autoclean -y
+```
+
+# Testing
+
+Sobald das Vagrantfile, mit `vagrant up` gestartet wird, kann auf das [Portainer WebGUI](https://192.169.4.20:9009) zugegriffen werden.
+
+Wenn die Installation erfolgreich war sollte nun eine Site zusehen sein (wie im unteren Bild), \
+wo beim ersten Login die Admin-Benutzer informationen gesetzt werden müssen, das heisst Passwort und Nutzername.
+
+![WebGUI](images/Uebersicht.png)
+
+
+Als erstes sollte ein simpler Verbindungstest mit `ping` durchgeführt werden.
+
+![Ping](images/Ping.png) 
+
+Wie im Bild ersichtlich, war dieser Test erfolgreich.
+
+Oder man könnte direkt das [Portainer WebGUI](https://192.169.4.20:9009) aufrufen:
+![Portainer](images/Portainer_webGui.png)
+
+Auch der Zugriff aufs WebGUI funktioniert. Somit können wir abschliessend sagen, dass unser System funktioniert.
+
+
+# Fazit
