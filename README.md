@@ -126,3 +126,25 @@ Vagrant.configure("2") do |config|
 > \
 > **(?)** Die Bezeichnung `&&` am Ende jeder Zeile macht, 
 > dass die nächste zeile nur dann ausgeführt wird wenn der command auf der aktuellen Zeile ohne Error beendet wurde.
+
+### Initial Tasks
+Als erstes wechsle ich den Nutzer zu "root", damit ich keine Probleme mit Berechtigungen bekomme 
+und nicht immer "sudo" schreiben muss. \
+Als zweites aktualisiere und bereinige ich das System, jeweils mit einem "-y" um Benutzerinteraktionen zu umgehen. \
+Sobald alles aktuell ist wird [docker](https://www.docker.com/) und [docker-compose](https://docs.docker.com/compose/) \ installiert.
+
+```bash
+sudo su - &&
+apt-get update -y &&
+apt-get upgrade -y && 
+apt-get autoremove -y &&
+apt-get install docker docker-compose -y &&
+```
+
+Sobald die Dockerprodukte installiert sind wird eingestellt, \
+dass das diese bei jedem Systemstart automatisch auch starten.
+
+```bash
+systemctl enable docker &&
+systemctl start docker &&
+```
