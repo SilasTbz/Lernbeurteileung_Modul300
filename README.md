@@ -221,3 +221,13 @@ Auch der Zugriff aufs WebGUI funktioniert. Somit können wir abschliessend sagen
 
 
 # Fazit
+
+
+# Quellen
+[Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+
+[Vagrant Website](https://www.vagrantup.com/)
+
+[Vagrant Tutorial by Hashicorp](https://learn.hashicorp.com/tutorials/vagrant/getting-started-provisioning)
+
+[Berger M300 Repo](https://github.com/mbe99/M300)
