@@ -228,4 +228,3 @@ Auch der Zugriff aufs WebGUI funktioniert. Somit können wir abschliessend sagen
 
 [Vagrant Tutorial by Hashicorp](https://learn.hashicorp.com/tutorials/vagrant/getting-started-provisioning)
 
-[Berger M300 Repo](https://github.com/mbe99/M300)
