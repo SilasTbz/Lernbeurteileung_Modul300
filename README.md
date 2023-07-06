@@ -37,8 +37,8 @@
 
 | **Produkt** | **Version** |
 ----------|----------
-| Vagrant | 2.2.19 |
-| VirtualBox | 6.1 |
+| Vagrant | 2.3.6 |
+| VirtualBox | 7.0.8 |
 | Portainer | 2.9.3 |
 | Ubuntu | 20.04 |
   
