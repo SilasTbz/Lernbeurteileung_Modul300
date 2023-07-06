@@ -203,7 +203,7 @@ Sobald das Vagrantfile, mit `vagrant up` gestartet wird, kann auf das [Portainer
 Wenn die Installation erfolgreich war sollte nun eine Site zusehen sein (wie im unteren Bild), \
 wo beim ersten Login die Admin-Benutzer informationen gesetzt werden müssen, das heisst Passwort und Nutzername.
 
-![WebGUI](images/Uebersicht.png)
+![WebGUI](images/Loginscreen.png)
 
 
 Als erstes sollte ein simpler Verbindungstest mit `ping` durchgeführt werden.
@@ -213,7 +213,7 @@ Als erstes sollte ein simpler Verbindungstest mit `ping` durchgeführt werden.
 Wie im Bild ersichtlich, war dieser Test erfolgreich.
 
 Oder man könnte direkt das [Portainer WebGUI](https://192.169.4.20:9009) aufrufen:
-![Portainer](images/Portainer_webGui.png)
+![Portainer](image/Webgui.png)
 
 Auch der Zugriff aufs WebGUI funktioniert. Somit können wir abschliessend sagen, dass unser System funktioniert.
 
