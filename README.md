@@ -203,7 +203,7 @@ Sobald das Vagrantfile, mit `vagrant up` gestartet wird, kann auf das [Portainer
 Wenn die Installation erfolgreich war sollte nun eine Site zusehen sein (wie im unteren Bild), \
 wo beim ersten Login die Admin-Benutzer informationen gesetzt werden müssen, das heisst Passwort und Nutzername.
 
-![WebGUI](images/Loginscreen.png)
+![WebGUI](image/Loginscreen.png)
 
 
 Als erstes sollte ein simpler Verbindungstest mit `ping` durchgeführt werden.
